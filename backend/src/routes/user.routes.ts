@@ -3,10 +3,10 @@ import { CreateUserController } from "../controllers/user/create-user/create-use
 import { DeleteUserController } from "../controllers/user/delete-user/delete-user";
 import { GetUsersController } from "../controllers/user/get-users/get-users";
 import { UpdateUserController } from "../controllers/user/update-user/update-user";
-import { MongoCreateUserRepository } from "../repositories/create-user/mongo-create-user";
-import { MongoDeleteUserRepository } from "../repositories/delete-user/mongo-delete-user";
-import { MongoGetUsersRepository } from "../repositories/get-users/mongo-get-users";
-import { MongoUpdateUserRepository } from "../repositories/update-user/mongo-update-user";
+import { MongoCreateUserRepository } from "../repositories/user/create-user/mongo-create-user";
+import { MongoDeleteUserRepository } from "../repositories/user/delete-user/mongo-delete-user";
+import { MongoGetUsersRepository } from "../repositories/user/get-users/mongo-get-users";
+import { MongoUpdateUserRepository } from "../repositories/user/update-user/mongo-update-user";
 const routes = Router();
 
 routes.get("/users", async (req, res) => {
