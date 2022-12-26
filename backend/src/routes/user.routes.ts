@@ -2,10 +2,12 @@ import { Router } from "express";
 import { CreateUserController } from "../controllers/user/create-user/create-user";
 import { DeleteUserController } from "../controllers/user/delete-user/delete-user";
 import { GetUsersController } from "../controllers/user/get-users/get-users";
+import { LoginUserController } from "../controllers/user/login-user/login-user";
 import { UpdateUserController } from "../controllers/user/update-user/update-user";
 import { MongoCreateUserRepository } from "../repositories/user/create-user/mongo-create-user";
 import { MongoDeleteUserRepository } from "../repositories/user/delete-user/mongo-delete-user";
 import { MongoGetUsersRepository } from "../repositories/user/get-users/mongo-get-users";
+import { MongoLoginUserRepository } from "../repositories/user/login-user/mongo-login-user";
 import { MongoUpdateUserRepository } from "../repositories/user/update-user/mongo-update-user";
 const routes = Router();
 
@@ -22,6 +24,17 @@ routes.post("/users", async (req, res) => {
     mongoCreateUsersRepository
   );
   const { body, statusCode } = await createUsersController.handle({
+    body: req.body,
+  });
+  res.status(statusCode).send(body);
+});
+
+routes.post("/login", async (req, res) => {
+  const mongoLoginUserRepository = new MongoLoginUserRepository();
+  const loginUsersController = new LoginUserController(
+    mongoLoginUserRepository
+  );
+  const { body, statusCode } = await loginUsersController.handle({
     body: req.body,
   });
   res.status(statusCode).send(body);
