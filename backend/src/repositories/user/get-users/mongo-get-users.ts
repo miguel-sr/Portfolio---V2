@@ -1,7 +1,7 @@
-import { IGetUsersRepository } from "../../controllers/user/get-users/protocols";
-import { MongoClient } from "../../database/mongo";
-import { User } from "../../models/user";
-import { MongoUser } from "../mongo-protocols";
+import { IGetUsersRepository } from "../../../controllers/user/get-users/protocols";
+import { MongoClient } from "../../../database/mongo";
+import { User } from "../../../models/user";
+import { MongoUser } from "../../mongo-protocols";
 
 // ==> Repository Pattern
 export class MongoGetUsersRepository implements IGetUsersRepository {
