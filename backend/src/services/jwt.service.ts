@@ -4,6 +4,8 @@ export interface IUserPayload {
   id: string;
   name: string;
   credentials: string;
+  iat: number;
+  exp: number;
 }
 
 class JwtService {

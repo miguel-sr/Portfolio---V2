@@ -1,13 +1,20 @@
 import { NextFunction, Request, Response } from "express";
+import getCache from "../services/cache.service";
 import jwtService from "../services/jwt.service";
 
-async function authMiddleware(req: Request, res: Response, next: NextFunction) {
+async function auth(req: Request, res: Response, next: NextFunction) {
   try {
+    const redisClient = await getCache();
     if (!req.headers.authorization) {
       return res.status(400).json("Missing authorization header.");
     }
 
     const token = req.headers.authorization.replace("Bearer ", "");
+    const inDenyList = await redisClient.get(`bl_${token}`);
+    if (inDenyList) {
+      return res.status(401).json("Authorization denied.");
+    }
+
     const decoded = jwtService.verify(token);
 
     if (decoded.credentials !== "admin") {
@@ -17,9 +24,8 @@ async function authMiddleware(req: Request, res: Response, next: NextFunction) {
     req.body = decoded;
     next();
   } catch (error) {
-    console.log(error);
     return res.status(500).json("Something went wrong.");
   }
 }
 
-export default authMiddleware;
+export default auth;
