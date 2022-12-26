@@ -4,7 +4,7 @@ import { IController, IHttpRequest, IHttpResponse } from "../../protocols";
 import { IDeleteSkillRepository } from "./protocols";
 
 export class DeleteSkillController implements IController {
-  constructor(private readonly deleteUserRepository: IDeleteSkillRepository) {}
+  constructor(private readonly deleteSkillRepository: IDeleteSkillRepository) {}
   async handle(
     httpRequest: IHttpRequest<unknown>
   ): Promise<IHttpResponse<Skill | string>> {
@@ -13,7 +13,7 @@ export class DeleteSkillController implements IController {
       if (!id) {
         return badRequest("Missing skill id.");
       }
-      const skill = await this.deleteUserRepository.deleteSkill(id);
+      const skill = await this.deleteSkillRepository.deleteSkill(id);
       return ok<Skill>(skill);
     } catch (error) {
       return serverError();
