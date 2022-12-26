@@ -1,13 +1,13 @@
 import { HttpStatusCode, IHttpResponse } from "./protocols";
 
-export const ok = <T>(body: any): IHttpResponse<T> => {
+export const ok = <T>(body: T): IHttpResponse<T> => {
   return {
     statusCode: HttpStatusCode.OK,
     body,
   };
 };
 
-export const created = <T>(body: any): IHttpResponse<T> => {
+export const created = <T>(body: T): IHttpResponse<T> => {
   return {
     statusCode: HttpStatusCode.CREATED,
     body,
