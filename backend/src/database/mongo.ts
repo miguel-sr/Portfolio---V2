@@ -17,8 +17,8 @@ export const MongoClient = {
 
     console.log("==> Connected to mongodb!");
   },
-  map(user: any) {
-    const { _id, ...rest } = user;
+  map(data: any) {
+    const { _id, ...rest } = data;
     return { id: _id.toHexString(), ...rest };
   },
 };
