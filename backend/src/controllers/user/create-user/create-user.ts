@@ -1,8 +1,8 @@
 import validator from "validator";
 import bcrypt from "bcryptjs";
 import { User } from "../../../models/user";
-import { badRequest, created, serverError } from "../helpers";
-import { IController, IHttpRequest, IHttpResponse } from "../protocols";
+import { badRequest, created, serverError } from "../../helpers";
+import { IController, IHttpRequest, IHttpResponse } from "../../protocols";
 import { ICreateUserParams, ICreateUserRepository } from "./protocols";
 
 export class CreateUserController implements IController {
