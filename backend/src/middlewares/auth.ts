@@ -21,10 +21,9 @@ async function auth(req: Request, res: Response, next: NextFunction) {
       return res.status(401).json("Authorization denied.");
     }
 
-    req.body = decoded;
     next();
   } catch (error) {
-    return res.status(500).json("Something went wrong.");
+    return res.status(401).json("Authorization denied.");
   }
 }
 
