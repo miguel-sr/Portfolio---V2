@@ -2,6 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import { config } from "dotenv";
 import userRoutes from "./routes/user.routes";
+import authRoutes from "./routes/auth.routes";
 import { MongoClient } from "./database/mongo";
 
 const main = async () => {
@@ -27,6 +28,7 @@ const main = async () => {
   });
 
   app.use("/api/v1", userRoutes);
+  app.use("/api/v1", authRoutes);
 
   const port = process.env.PORT || 8089;
 

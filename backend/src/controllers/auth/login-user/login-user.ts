@@ -18,7 +18,6 @@ export class LoginUserController implements IController {
       const user = await this.loginUserRepository.loginUser(body);
       return ok<User>(user);
     } catch (error) {
-      console.log(error);
       return serverError();
     }
   }
