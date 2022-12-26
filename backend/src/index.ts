@@ -1,6 +1,7 @@
 import express from "express";
+import morgan from "morgan";
 import { config } from "dotenv";
-import routes from "./routes/routes";
+import userRoutes from "./routes/user.routes";
 import { MongoClient } from "./database/mongo";
 
 const main = async () => {
@@ -12,6 +13,9 @@ const main = async () => {
   app.use(express.json());
   app.use(express.json({ type: "application/vnd.api+json" }));
 
+  // ==> Morgan
+  app.use(morgan("dev"));
+
   await MongoClient.connect();
 
   app.get("/api/v1", (req, res) => {
@@ -22,7 +26,7 @@ const main = async () => {
     });
   });
 
-  app.use("/api/v1", routes);
+  app.use("/api/v1", userRoutes);
 
   const port = process.env.PORT || 8089;
 

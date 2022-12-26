@@ -1,4 +1,4 @@
-import { User } from "../../models/user";
+import { User } from "../../../models/user";
 import { ok, serverError } from "../helpers";
 import { IController, IHttpResponse } from "../protocols";
 import { IGetUsersRepository } from "./protocols";

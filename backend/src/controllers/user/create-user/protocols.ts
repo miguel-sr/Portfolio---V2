@@ -1,10 +1,11 @@
-import { User } from "../../models/user";
+import { User } from "../../../models/user";
 
 export interface ICreateUserParams {
   name: string;
   email: string;
   password: string;
   credentials: string;
+  token: string;
 }
 
 export interface ICreateUserRepository {

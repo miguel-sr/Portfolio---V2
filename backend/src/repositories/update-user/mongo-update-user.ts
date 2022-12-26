@@ -1,7 +1,7 @@
 import {
   IUpdateUserParams,
   IUpdateUserRepository,
-} from "../../controllers/update-user/protocols";
+} from "../../controllers/user/update-user/protocols";
 import { ObjectId } from "mongodb";
 import { MongoClient } from "../../database/mongo";
 import { User } from "../../models/user";
