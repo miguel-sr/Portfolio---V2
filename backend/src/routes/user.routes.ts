@@ -1,4 +1,5 @@
 import { Router } from "express";
+import auth from "../middlewares/auth";
 import { CreateUserController } from "../controllers/user/create-user/create-user";
 import { DeleteUserController } from "../controllers/user/delete-user/delete-user";
 import { GetUsersController } from "../controllers/user/get-users/get-users";
@@ -9,14 +10,14 @@ import { MongoGetUsersRepository } from "../repositories/user/get-users/mongo-ge
 import { MongoUpdateUserRepository } from "../repositories/user/update-user/mongo-update-user";
 const routes = Router();
 
-routes.get("/users", async (req, res) => {
+routes.get("/users", auth, async (req, res) => {
   const mongoGetUsersRepository = new MongoGetUsersRepository();
   const getUsersController = new GetUsersController(mongoGetUsersRepository);
   const { body, statusCode } = await getUsersController.handle();
   res.status(statusCode).send(body);
 });
 
-routes.post("/users", async (req, res) => {
+routes.post("/users", auth, async (req, res) => {
   const mongoCreateUsersRepository = new MongoCreateUserRepository();
   const createUsersController = new CreateUserController(
     mongoCreateUsersRepository
@@ -27,7 +28,7 @@ routes.post("/users", async (req, res) => {
   res.status(statusCode).send(body);
 });
 
-routes.patch("/users/:id", async (req, res) => {
+routes.patch("/users/:id", auth, async (req, res) => {
   const mongoUpdateUserRepository = new MongoUpdateUserRepository();
   const updateUserController = new UpdateUserController(
     mongoUpdateUserRepository
@@ -39,7 +40,7 @@ routes.patch("/users/:id", async (req, res) => {
   res.status(statusCode).send(body);
 });
 
-routes.delete("/users/:id", async (req, res) => {
+routes.delete("/users/:id", auth, async (req, res) => {
   const mongoDeleteUserRepository = new MongoDeleteUserRepository();
   const deleteUserController = new DeleteUserController(
     mongoDeleteUserRepository
