@@ -1,12 +1,10 @@
 <template>
   <div>
     <Navbar />
-
-    <!-- Hero -->
     <Hero />
-
-    <!-- About Me -->
     <About />
+    <Skills />
+    <Footer />
   </div>
 </template>
 
