@@ -10,7 +10,7 @@
             <nuxt-link class="nav-link" to="/">Home</nuxt-link>
           </li>
           <li class="nav-item hover-effect">
-            <nuxt-link class="nav-link" to="/">About me</nuxt-link>
+            <nuxt-link class="nav-link" to="#about">About me</nuxt-link>
           </li>
           <li class="nav-item hover-effect">
             <nuxt-link class="nav-link" to="/">Skills</nuxt-link>
@@ -33,16 +33,10 @@ export default Vue.extend({
 </script>
 
 <style>
-body {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgb(0, 0, 0, 0.3)),
-    url(@/assets/bg-body.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-}
 nav {
   font-size: 1.3rem;
   z-index: 3;
-  background-color: var(--dark-gray-opacity);
+  background-color: var(--dark-gray-50);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
@@ -72,6 +66,10 @@ nav .nav-item a {
   margin-right: 10px;
   position: relative;
   transition: color 0.4s ease-in-out;
+}
+
+nav .nav-item a:focus {
+  color: var(--dark-yellow);
 }
 
 nav .nav-item a:hover {

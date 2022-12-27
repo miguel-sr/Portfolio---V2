@@ -1,8 +1,12 @@
 <template>
   <div>
     <Navbar />
+
     <!-- Hero -->
     <Hero />
+
+    <!-- About Me -->
+    <About />
   </div>
 </template>
 

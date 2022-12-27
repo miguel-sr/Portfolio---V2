@@ -3,7 +3,8 @@
 
 :root {
   --dark-gray: rgb(33, 37, 43);
-  --dark-gray-opacity: rgb(33, 37, 43, 0.5);
+  --dark-gray-90: rgba(33, 37, 43, 0.9);
+  --dark-gray-50: rgba(33, 37, 43, 0.5);
   --light-gray: rgb(40, 44, 52);
   --light-yellow: rgb(248, 177, 51);
   --dark-yellow: rgb(177, 116, 10);
@@ -21,4 +22,31 @@
   border: none;
   text-decoration: none;
   font-family: Montserrat, sans-serif;
+}
+
+body {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgb(0, 0, 0, 0.3)),
+    url(@/assets/bg-body.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* width */
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+html::-webkit-scrollbar-track {
+  background: var(--dark-gray);
+}
+
+/* Handle */
+html::-webkit-scrollbar-thumb {
+  background: rgb(248, 177, 51);
+  background: linear-gradient(
+    180deg,
+    var(--light-yellow) 50%,
+    var(--dark-yellow) 100%
+  );
 }
