@@ -1,7 +1,7 @@
 {
   "name": "portfolio---v2",
   "version": "1.0.0",
-  "description": "CRUD utilizando Typescript com Nodel.js",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.ts"
