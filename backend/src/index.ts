@@ -4,6 +4,7 @@ import { config } from "dotenv";
 import authRoutes from "./routes/auth.routes";
 import userRoutes from "./routes/user.routes";
 import skillRoutes from "./routes/skill.routes";
+import projectRoutes from "./routes/project.routes";
 import { MongoClient } from "./database/mongo";
 
 const main = async () => {
@@ -31,6 +32,7 @@ const main = async () => {
   app.use("/api/v1", authRoutes);
   app.use("/api/v1", userRoutes);
   app.use("/api/v1", skillRoutes);
+  app.use("/api/v1", projectRoutes);
 
   const port = process.env.PORT || 8089;
 
