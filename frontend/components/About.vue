@@ -5,7 +5,7 @@
     class="d-flex p-5 align-items-center justify-content-center"
   >
     <div class="w-50 me-5">
-      <h2 class="mt-5">Olá, eu sou o Miguel, é uma honra lhe conhecer.</h2>
+      <h2 class="mb-3">Olá, eu sou o Miguel, é uma honra lhe conhecer.</h2>
       <p>
         Meu interesse pela área de desenvolvimento para web começou quando eu
         ainda estava aprendendo a lógica de programação - em 2019 - e a
