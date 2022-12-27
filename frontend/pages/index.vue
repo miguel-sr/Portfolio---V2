@@ -1,7 +1,8 @@
 <template>
   <div>
     <Navbar />
-    <div style="height: 1080px">sdaasd</div>
+    <!-- Hero -->
+    <Hero />
   </div>
 </template>
 
@@ -12,3 +13,5 @@ export default Vue.extend({
   name: "IndexPage",
 });
 </script>
+
+<style scoped></style>

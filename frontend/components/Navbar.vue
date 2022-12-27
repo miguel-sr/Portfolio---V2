@@ -25,12 +25,11 @@
 </template>
 
 <script>
-export default {
+import Vue from "vue";
+
+export default Vue.extend({
   name: "NavbarComponent",
-  data() {
-    return {};
-  },
-};
+});
 </script>
 
 <style>
@@ -42,9 +41,10 @@ body {
 }
 nav {
   font-size: 1.3rem;
-  z-index: 2;
+  z-index: 3;
   background-color: var(--dark-gray-opacity);
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 nav #navbar-brand {
