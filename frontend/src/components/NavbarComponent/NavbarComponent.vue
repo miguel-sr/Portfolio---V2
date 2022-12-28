@@ -18,19 +18,19 @@
           <li class="nav-item hover-effect">
             <router-link class="nav-link" to="/#work">Work</router-link>
           </li>
-          <li class="nav-item dropstart user-profile" v-if="false">
+          <li class="nav-item dropstart user-profile" v-if="true">
             <router-link
               class="nav-link"
               to="/"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="bi bi-person-circle" style="font-size: 1.8em"></i>
+              <i class="bi bi-person-circle" style="font-size: 1.3em"></i>
             </router-link>
             <ul class="dropdown-menu text-center">
-              <router-link class="dropdown-item disabled" to="/"
+              <span class="dropdown-item disabled" to="/"
                 >Miguel S. Ramos
-              </router-link>
+              </span>
               <div class="dropdown-divider"></div>
               <router-link class="dropdown-item" to="/admin">Admin</router-link>
               <router-link class="dropdown-item" to="/">Logout</router-link>
@@ -105,5 +105,10 @@ nav .hover-effect a::after {
 nav .hover-effect a:hover::after {
   width: 100%;
   background-color: var(--light-yellow);
+}
+
+nav .dropdown-menu a:active {
+  background-color: var(--bs-dropdown-link-hover-bg);
+  color: var(--light-yellow);
 }
 </style>

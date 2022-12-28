@@ -25,7 +25,7 @@ import ButtonComponent from "../../components/ButtonComponent/ButtonComponent.vu
 import FooterComponent from "../../components/FooterComponent/FooterComponent.vue";
 
 export default defineComponent({
-  name: "IndexPage",
+  name: "Admin-IndexPage",
   components: {
     NavbarComponent,
     ButtonComponent,

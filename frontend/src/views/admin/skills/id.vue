@@ -1,9 +1,9 @@
 <template>
   <div>
     <NavbarComponent />
-    <section class="d-flex flex-column">
+    <section class="d-flex flex-column justify-content-center">
       <div class="me-auto ms-auto text-center">
-        <h2>🚀 Skills</h2>
+        <h2>🚀 Editar Skill</h2>
         <div class="container">
           <form class="text-center mx-auto" @submit.prevent="onSubmit">
             <label for="name" class="w-100"
@@ -32,29 +32,9 @@
               </div>
             </label>
             <div class="mt-4 w-50 mx-auto">
-              <ButtonComponent text="Criar" type="submit" />
+              <ButtonComponent text="Salvar" type="submit" />
             </div>
           </form>
-        </div>
-        <div class="d-flex flex-wrap gap-4 justify-content-center mx-auto mt-5">
-          <div class="skill d-flex align-items-center px-3 py-2">
-            <div role="button">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
-              />
-              <span class="ms-3 mb-0">Git/Github</span>
-            </div>
-            <i class="bi bi-x ms-auto me-0"></i>
-          </div>
-          <div class="skill d-flex align-items-center px-3 py-2">
-            <div role="button">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-              />
-              <span class="ms-3 mb-0">Node.js</span>
-            </div>
-            <i class="bi bi-x ms-auto me-0"></i>
-          </div>
         </div>
       </div>
     </section>
@@ -70,7 +50,6 @@ section {
 }
 
 h2 {
-  margin-top: 100px;
   font-weight: 800;
   color: var(--light-yellow);
 }
@@ -89,27 +68,5 @@ input {
   color: var(--white);
   border-radius: 10px;
   padding: 10px;
-}
-
-.skill {
-  background: var(--dark-gray-90);
-  border-radius: 25px;
-  width: 230px;
-}
-
-.skill img {
-  width: 35px;
-}
-
-.skill span {
-  color: var(--beige);
-  font-weight: 600;
-  text-align: right;
-}
-
-.skill i::before {
-  cursor: pointer;
-  color: var(--dark-yellow);
-  font-size: 40px;
 }
 </style>

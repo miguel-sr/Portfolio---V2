@@ -4,7 +4,7 @@ import ButtonComponent from "@/components/ButtonComponent/ButtonComponent.vue";
 import FooterComponent from "@/components/FooterComponent/FooterComponent.vue";
 
 export default defineComponent({
-  name: "Admin-Skills-IndexPage",
+  name: "Admin-Skills-Id",
   components: {
     NavbarComponent,
     ButtonComponent,
