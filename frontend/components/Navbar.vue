@@ -18,6 +18,25 @@
           <li class="nav-item hover-effect">
             <nuxt-link class="nav-link" to="#work">Work</nuxt-link>
           </li>
+          <b-dropdown
+            v-if="true"
+            size="lg"
+            variant="link"
+            toggle-class="text-decoration-none"
+            no-caret
+          >
+            <template #button-content>
+              <b-icon icon="person-circle"></b-icon>
+            </template>
+            <b-dropdown-item disabled>Miguel S. Ramos</b-dropdown-item>
+            <b-dropdown-divider></b-dropdown-divider>
+            <b-dropdown-item class="text-center">
+              <nuxt-link class="dropdown-item" to="/admin">Admin</nuxt-link>
+            </b-dropdown-item>
+            <b-dropdown-item class="text-center">
+              <nuxt-link class="dropdown-item" to="/">Logout</nuxt-link>
+            </b-dropdown-item>
+          </b-dropdown>
         </ul>
       </div>
     </div>
@@ -39,6 +58,10 @@ nav {
   background-color: var(--dark-gray-50);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+}
+
+svg {
+  color: var(--dark-yellow);
 }
 
 nav #navbar-brand {
