@@ -1,5 +1,6 @@
 import express from "express";
 import morgan from "morgan";
+import cors from "cors";
 import { config } from "dotenv";
 import authRoutes from "./routes/auth.routes";
 import userRoutes from "./routes/user.routes";
@@ -18,6 +19,7 @@ const main = async () => {
 
   // ==> Morgan
   app.use(morgan("dev"));
+  app.use(cors());
 
   await MongoClient.connect();
 
