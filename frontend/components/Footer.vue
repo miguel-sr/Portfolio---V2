@@ -26,7 +26,9 @@ svg {
 }
 
 footer {
-  background: var(--dark-gray-90);
+  background: var(--dark-gray-50);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 footer a {

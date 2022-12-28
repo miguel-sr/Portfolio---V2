@@ -66,9 +66,6 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-section {
-  margin-bottom: 100px;
-}
 
 h2 {
   font-weight: 800;

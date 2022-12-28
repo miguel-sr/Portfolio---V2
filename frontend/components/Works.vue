@@ -1,0 +1,82 @@
+<template>
+  <!-- Hero -->
+  <section id="work" class="d-flex flex-column align-items-center">
+    <h2>📌 Work</h2>
+    <div class="d-flex flex-wrap justify-content-center w-100 mx-auto mt-5">
+      <nuxt-link to="/" class="item">
+        <img class="w-100" src="../assets/spotify.png" />
+      </nuxt-link>
+      <nuxt-link to="/" class="item">
+        <img class="w-100" src="../assets/spotify.png" />
+      </nuxt-link>
+      <nuxt-link to="/" class="item">
+        <img class="w-100" src="../assets/spotify.png" />
+      </nuxt-link>
+      <nuxt-link to="/" class="item">
+        <img class="w-100" src="../assets/spotify.png" />
+      </nuxt-link>
+      <nuxt-link to="/" class="item">
+        <img class="w-100" src="../assets/spotify.png" />
+      </nuxt-link>
+      <nuxt-link to="/" class="item">
+        <img class="w-100" src="../assets/spotify.png" />
+      </nuxt-link>
+      <nuxt-link to="/" class="item">
+        <img class="w-100" src="../assets/spotify.png" />
+      </nuxt-link>
+      <nuxt-link to="/" class="item">
+        <img class="w-100" src="../assets/spotify.png" />
+      </nuxt-link>
+      <nuxt-link to="/" class="item">
+        <img class="w-100" src="../assets/spotify.png" />
+      </nuxt-link>
+      <nuxt-link to="/" class="item">
+        <img class="w-100" src="../assets/spotify.png" />
+      </nuxt-link>
+    </div>
+  </section>
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
+  name: "WorksComponent",
+});
+</script>
+
+<style scoped>
+section {
+  margin-bottom: 100px;
+}
+
+h2 {
+  font-weight: 800;
+  margin-top: 100px;
+  color: var(--light-yellow);
+}
+
+.item {
+  width: 270px;
+  position: relative;
+}
+
+.item:hover::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: "Ver Projeto";
+  line-height: 270px;
+  font-weight: 800;
+  font-size: 38px;
+  text-align: center;
+  color: var(--light-yellow);
+  cursor: pointer;
+  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+</style>

@@ -4,6 +4,7 @@
     <Hero />
     <About />
     <Skills />
+    <Works />
     <Footer />
   </div>
 </template>
