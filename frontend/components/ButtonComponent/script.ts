@@ -6,5 +6,9 @@ export default Vue.extend({
       type: String,
       default: "Button Text",
     },
+    type: {
+      type: String,
+      default: "button",
+    },
   },
 });
