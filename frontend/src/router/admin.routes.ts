@@ -6,6 +6,9 @@ const routes: Array<RouteRecordRaw> = [
     name: "admin",
     component: () =>
       import(/* webpackChunkName: "admin" */ "../views/admin/index.vue"),
+    meta: {
+      isAdmin: true,
+    },
   },
   {
     path: "/admin/skills",
@@ -14,12 +17,18 @@ const routes: Array<RouteRecordRaw> = [
       import(
         /* webpackChunkName: "skills" */ "../views/admin/skills/index.vue"
       ),
+    meta: {
+      isAdmin: true,
+    },
   },
   {
     path: "/admin/skills/id:id",
     name: "skills/id",
     component: () =>
       import(/* webpackChunkName: "skills" */ "../views/admin/skills/id.vue"),
+    meta: {
+      isAdmin: true,
+    },
   },
 ];
 

@@ -18,7 +18,7 @@
           <li class="nav-item hover-effect">
             <router-link class="nav-link" to="/#work">Work</router-link>
           </li>
-          <li class="nav-item dropstart user-profile" v-if="true">
+          <li class="nav-item user-profile" v-if="isAdmin()">
             <router-link
               class="nav-link"
               to="/"
@@ -27,13 +27,15 @@
             >
               <i class="bi bi-person-circle" style="font-size: 1.3em"></i>
             </router-link>
-            <ul class="dropdown-menu text-center">
-              <span class="dropdown-item disabled" to="/"
-                >Miguel S. Ramos
-              </span>
-              <div class="dropdown-divider"></div>
+            <ul class="dropdown-menu text-center mt-0">
+              <router-link class="dropdown-item disabled" to="/">
+                {{ username }}
+              </router-link>
+              <div class="dropdown-divider bg-light"></div>
               <router-link class="dropdown-item" to="/admin">Admin</router-link>
-              <router-link class="dropdown-item" to="/">Logout</router-link>
+              <router-link class="dropdown-item" to="/" @click="logout">
+                Logout
+              </router-link>
             </ul>
           </li>
         </ul>
@@ -51,10 +53,6 @@ nav {
   background-color: var(--dark-gray-50);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-}
-
-svg {
-  color: var(--dark-yellow);
 }
 
 nav #navbar-brand {
@@ -78,7 +76,6 @@ nav #navbar-brand::before {
 nav .nav-item a {
   color: var(--dark-yellow);
   font-weight: 800;
-  text-decoration: none;
   margin-right: 10px;
   position: relative;
   transition: color 0.4s ease-in-out;
@@ -103,12 +100,22 @@ nav .hover-effect a::after {
 }
 
 nav .hover-effect a:hover::after {
-  width: 100%;
   background-color: var(--light-yellow);
+  width: 100%;
 }
 
-nav .dropdown-menu a:active {
-  background-color: var(--bs-dropdown-link-hover-bg);
+nav .dropdown-menu {
+  background-color: var(--dark-gray-50);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  left: auto !important;
+  right: 0;
+  border-radius: 0;
+  border: 0;
+}
+
+nav .dropdown-menu a:hover {
+  background-color: transparent;
   color: var(--light-yellow);
 }
 </style>
