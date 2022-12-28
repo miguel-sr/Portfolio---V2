@@ -30,7 +30,7 @@
             </div>
           </label>
           <div class="mt-4">
-            <button class="btn btn-primary btn-block w-50">Login</button>
+            <Button text="Login" @buttonClick="event" />
           </div>
         </form>
       </div>
@@ -44,6 +44,11 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "LoginPage",
+  methods: {
+    event() {
+      alert("teste");
+    },
+  },
 });
 </script>
 
@@ -71,20 +76,5 @@ input {
   color: var(--white);
   border-radius: 10px;
   padding: 10px;
-}
-
-button {
-  color: #000;
-  font-weight: 800;
-  background: var(--dark-yellow);
-  border: none;
-  border-radius: 50px;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
-button:hover {
-  color: #000;
-  background: var(--light-yellow);
 }
 </style>
