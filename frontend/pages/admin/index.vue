@@ -6,15 +6,15 @@
         <h2>Painel Administrativo</h2>
         <div class="d-flex flex-column justify-content-center">
           <nuxt-link class="m-3 w-75 mx-auto" to="/admin">
-            <Button text="Skills" />
+            <ButtonComponent text="Skills" />
           </nuxt-link>
           <nuxt-link class="m-3 w-75 mx-auto" to="/">
-            <Button text="Projects" />
+            <ButtonComponent text="Projects" />
           </nuxt-link>
         </div>
       </div>
     </section>
-    <Footer />
+    <FooterComponent />
   </div>
 </template>
 

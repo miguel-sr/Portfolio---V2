@@ -2,18 +2,7 @@
   <button @click="$emit('buttonClick')">{{ text }}</button>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-export default Vue.extend({
-  name: "ButtonComponent",
-  props: {
-    text: {
-      type: String,
-      default: "Button Text",
-    },
-  },
-});
-</script>
+<script src="./script.ts"></script>
 <style scoped>
 button {
   color: #000;

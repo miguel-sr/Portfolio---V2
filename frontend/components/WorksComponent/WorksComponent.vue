@@ -4,46 +4,40 @@
     <h2>📌 Work</h2>
     <div class="d-flex flex-wrap justify-content-center w-100 mx-auto mt-5">
       <nuxt-link to="/" class="item">
-        <img class="w-100" src="../assets/spotify.png" />
+        <img class="w-100" src="@/assets/spotify.png" />
       </nuxt-link>
       <nuxt-link to="/" class="item">
-        <img class="w-100" src="../assets/spotify.png" />
+        <img class="w-100" src="@/assets/spotify.png" />
       </nuxt-link>
       <nuxt-link to="/" class="item">
-        <img class="w-100" src="../assets/spotify.png" />
+        <img class="w-100" src="@/assets/spotify.png" />
       </nuxt-link>
       <nuxt-link to="/" class="item">
-        <img class="w-100" src="../assets/spotify.png" />
+        <img class="w-100" src="@/assets/spotify.png" />
       </nuxt-link>
       <nuxt-link to="/" class="item">
-        <img class="w-100" src="../assets/spotify.png" />
+        <img class="w-100" src="@/assets/spotify.png" />
       </nuxt-link>
       <nuxt-link to="/" class="item">
-        <img class="w-100" src="../assets/spotify.png" />
+        <img class="w-100" src="@/assets/spotify.png" />
       </nuxt-link>
       <nuxt-link to="/" class="item">
-        <img class="w-100" src="../assets/spotify.png" />
+        <img class="w-100" src="@/assets/spotify.png" />
       </nuxt-link>
       <nuxt-link to="/" class="item">
-        <img class="w-100" src="../assets/spotify.png" />
+        <img class="w-100" src="@/assets/spotify.png" />
       </nuxt-link>
       <nuxt-link to="/" class="item">
-        <img class="w-100" src="../assets/spotify.png" />
+        <img class="w-100" src="@/assets/spotify.png" />
       </nuxt-link>
       <nuxt-link to="/" class="item">
-        <img class="w-100" src="../assets/spotify.png" />
+        <img class="w-100" src="@/assets/spotify.png" />
       </nuxt-link>
     </div>
   </section>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
-  name: "WorksComponent",
-});
-</script>
+<script src="./script.ts"></script>
 
 <style scoped>
 section {

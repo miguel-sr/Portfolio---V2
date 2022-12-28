@@ -1,11 +1,11 @@
 <template>
   <div>
-    <Navbar />
-    <Hero />
-    <About />
-    <Skills />
-    <Works />
-    <Footer />
+    <NavbarComponent />
+    <HeroComponent />
+    <AboutComponent />
+    <SkillsComponent />
+    <WorksComponent />
+    <FooterComponent />
   </div>
 </template>
 

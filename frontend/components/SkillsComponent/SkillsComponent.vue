@@ -57,16 +57,9 @@
   </section>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
-  name: "SkillsComponent",
-});
-</script>
+<script src="./script.ts"></script>
 
 <style scoped>
-
 h2 {
   font-weight: 800;
   margin-top: 100px;

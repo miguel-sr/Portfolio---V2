@@ -19,18 +19,12 @@
       </p>
     </div>
     <div class="image-container position-relative">
-      <img src="../assets/myphoto.jpg" />
+      <img src="@/assets/myphoto.jpg" />
     </div>
   </section>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
-  name: "AboutComponent",
-});
-</script>
+<script src="./script.ts"></script>
 
 <style scoped>
 section {

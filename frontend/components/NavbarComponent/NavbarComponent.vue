@@ -43,13 +43,7 @@
   </nav>
 </template>
 
-<script>
-import Vue from "vue";
-
-export default Vue.extend({
-  name: "NavbarComponent",
-});
-</script>
+<script src="./script.ts"></script>
 
 <style>
 nav {

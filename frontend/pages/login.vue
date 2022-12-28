@@ -30,12 +30,12 @@
             </div>
           </label>
           <div class="mt-4">
-            <Button text="Login" @buttonClick="event" />
+            <ButtonComponent text="Login" @buttonClick="event" />
           </div>
         </form>
       </div>
     </section>
-    <Footer />
+    <FooterComponent />
   </div>
 </template>
 

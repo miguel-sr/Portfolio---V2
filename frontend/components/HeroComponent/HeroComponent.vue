@@ -5,17 +5,11 @@
   >
     <h1>Desenvolvedor Fullstack</h1>
     <h4>Eu escrevo códigos e amo o que faço.</h4>
-    <img class="avatar mt-2" src="../assets/avatar.svg" />
+    <img class="avatar mt-2" src="@/assets/avatar.svg" />
   </section>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
-  name: "HeroComponent",
-});
-</script>
+<script src="./script.ts"></script>
 
 <style scoped>
 section {
