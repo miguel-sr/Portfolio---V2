@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <NavbarComponent />
     <section class="d-flex flex-column justify-content-center">
       <h1 class="text-center mb-4">Painel Administrativo</h1>
       <div class="container">
