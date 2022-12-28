@@ -10,13 +10,13 @@
             <nuxt-link class="nav-link" to="/">Home</nuxt-link>
           </li>
           <li class="nav-item hover-effect">
-            <nuxt-link class="nav-link" to="#about">About me</nuxt-link>
+            <nuxt-link class="nav-link" to="/#about">About me</nuxt-link>
           </li>
           <li class="nav-item hover-effect">
-            <nuxt-link class="nav-link" to="#skills">Skills</nuxt-link>
+            <nuxt-link class="nav-link" to="/#skills">Skills</nuxt-link>
           </li>
           <li class="nav-item hover-effect">
-            <nuxt-link class="nav-link" to="#work">Work</nuxt-link>
+            <nuxt-link class="nav-link" to="/#work">Work</nuxt-link>
           </li>
           <b-dropdown
             v-if="true"
