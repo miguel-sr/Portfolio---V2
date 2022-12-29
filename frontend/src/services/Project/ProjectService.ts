@@ -1,5 +1,5 @@
 import Api from "../api";
-import { ISkillParams } from "./protocols";
+import { IProjectParams } from "./protocols";
 
 export default {
   async get(id?: string) {
@@ -10,9 +10,9 @@ export default {
     const response = await Api().get("/skills");
     return response.data;
   },
-  async post(skill: ISkillParams) {
+  async post(project: IProjectParams) {
     try {
-      await Api().post("/skills", skill, {
+      await Api().post("/skills", project, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("userToken")}`,
         },
@@ -21,9 +21,9 @@ export default {
       console.log(error);
     }
   },
-  async patch(id: string, skill: ISkillParams) {
+  async patch(id: string, project: IProjectParams) {
     try {
-      await Api().patch("/skills/" + id, skill, {
+      await Api().patch("/skills/" + id, project, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("userToken")}`,
         },

@@ -6,7 +6,7 @@
 import { defineComponent } from "vue";
 export default defineComponent({
   mounted() {
-    document.title = "Portfólio";
+    document.title = "Miguel S. Ramos | Fullstack Developver";
   },
 });
 </script>

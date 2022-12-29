@@ -1,4 +1,4 @@
 export interface ISkillParams {
-  name: string;
-  icon: string;
+  name?: string;
+  icon?: string;
 }

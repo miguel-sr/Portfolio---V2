@@ -1,12 +1,11 @@
 import { Project } from "../../../models/project";
-import { Skill } from "../../../models/skill";
 
 export interface IUpdateProjectParams {
   name?: string;
   description?: string;
   deploy_url?: string;
   github_url?: string;
-  skills?: Skill[];
+  skills?: string[];
   images?: string[];
 }
 
