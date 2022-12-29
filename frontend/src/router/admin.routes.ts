@@ -32,6 +32,28 @@ const routes: Array<RouteRecordRaw> = [
       isAdmin: true,
     },
   },
+  {
+    path: "/admin/work",
+    name: "AdminProjectIndexPage",
+    component: () =>
+      import(
+        /* webpackChunkName: "AdminProjectIndexPage" */ "../views/admin/project/index.vue"
+      ),
+    meta: {
+      isAdmin: true,
+    },
+  },
+  {
+    path: "/admin/work/?id=:id",
+    name: "AdminProjectId",
+    component: () =>
+      import(
+        /* webpackChunkName: "AdminProjectId" */ "../views/admin/project/id.vue"
+      ),
+    meta: {
+      isAdmin: true,
+    },
+  },
 ];
 
 export default routes;

@@ -8,8 +8,8 @@
           <router-link class="m-3 w-75 mx-auto" to="/admin/skills">
             <ButtonComponent text="Skills" />
           </router-link>
-          <router-link class="m-3 w-75 mx-auto" to="/">
-            <ButtonComponent text="Projects" />
+          <router-link class="m-3 w-75 mx-auto" to="/admin/work">
+            <ButtonComponent text="Work" />
           </router-link>
         </div>
       </div>
