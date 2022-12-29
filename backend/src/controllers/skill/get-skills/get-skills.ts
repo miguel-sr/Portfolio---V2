@@ -1,15 +1,18 @@
 import { Skill } from "../../../models/skill";
 import { ok, serverError } from "../../helpers";
-import { IController, IHttpResponse } from "../../protocols";
+import { IController, IHttpRequest, IHttpResponse } from "../../protocols";
 import { IGetSkillsRepository } from "./protocols";
 
 export class GetSkillsController implements IController {
   constructor(private readonly getSkillsRepository: IGetSkillsRepository) {}
 
-  async handle(): Promise<IHttpResponse<Skill[] | string>> {
+  async handle(
+    httpRequest: IHttpRequest<unknown>
+  ): Promise<IHttpResponse<Skill[] | Skill | string>> {
     try {
-      const skills = await this.getSkillsRepository.getSkills();
-      return ok<Skill[]>(skills);
+      const id = httpRequest?.params?.id;
+      const skills = await this.getSkillsRepository.getSkills(id);
+      return ok<Skill[] | Skill>(skills);
     } catch (error) {
       return serverError();
     }

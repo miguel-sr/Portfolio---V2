@@ -1,4 +1,4 @@
-import { MongoClient as Mongo, Db } from "mongodb";
+import { MongoClient as Mongo, Db, WithId } from "mongodb";
 
 export const MongoClient = {
   client: undefined as unknown as Mongo,
@@ -20,5 +20,11 @@ export const MongoClient = {
   map(data: any) {
     const { _id, ...rest } = data;
     return { id: _id.toHexString(), ...rest };
+  },
+  mapArray<T>(data: WithId<T>[]) {
+    return data.map(({ _id, ...rest }) => ({
+      ...rest,
+      id: _id.toHexString(),
+    }));
   },
 };

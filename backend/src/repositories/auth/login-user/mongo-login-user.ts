@@ -32,7 +32,7 @@ export class MongoLoginUserRepository implements ILoginUserRepository {
       { _id: user._id },
       {
         $set: {
-          token: await jwtService.sign(MongoClient.map(user)),
+          token: jwtService.sign(MongoClient.map(user)),
         },
       }
     );

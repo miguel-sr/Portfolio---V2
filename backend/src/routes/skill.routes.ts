@@ -10,10 +10,12 @@ import { MongoDeleteSkillRepository } from "../repositories/skill/delete-skill/m
 import { DeleteSkillController } from "../controllers/skill/delete-skill/delete-skill";
 const routes = Router();
 
-routes.get("/skills", auth, async (req, res) => {
+routes.get("/skills/:id?", auth, async (req, res) => {
   const mongoGetSkillsRepository = new MongoGetSkillsRepository();
   const getSkillsController = new GetSkillsController(mongoGetSkillsRepository);
-  const { body, statusCode } = await getSkillsController.handle();
+  const { body, statusCode } = await getSkillsController.handle({
+    params: req.params,
+  });
   res.status(statusCode).send(body);
 });
 

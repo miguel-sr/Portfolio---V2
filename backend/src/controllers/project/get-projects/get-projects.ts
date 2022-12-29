@@ -1,15 +1,18 @@
 import { Project } from "../../../models/project";
 import { ok, serverError } from "../../helpers";
-import { IController, IHttpResponse } from "../../protocols";
+import { IController, IHttpRequest, IHttpResponse } from "../../protocols";
 import { IGetProjectsRepository } from "./protocols";
 
 export class GetProjectsController implements IController {
   constructor(private readonly getProjectsRepository: IGetProjectsRepository) {}
 
-  async handle(): Promise<IHttpResponse<Project[] | string>> {
+  async handle(
+    httpRequest: IHttpRequest<unknown>
+  ): Promise<IHttpResponse<Project[] | Project | string>> {
     try {
-      const projects = await this.getProjectsRepository.getProjects();
-      return ok<Project[]>(projects);
+      const id = httpRequest?.params?.id;
+      const projects = await this.getProjectsRepository.getProjects(id);
+      return ok<Project[] | Project>(projects);
     } catch (error) {
       return serverError();
     }

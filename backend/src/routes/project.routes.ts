@@ -10,12 +10,14 @@ import { MongoDeleteProjectRepository } from "../repositories/project/delete-pro
 import { DeleteProjectController } from "../controllers/project/delete-project/delete-project";
 const routes = Router();
 
-routes.get("/projects", auth, async (req, res) => {
+routes.get("/projects/:id?", auth, async (req, res) => {
   const mongoGetProjectsRepository = new MongoGetProjectsRepository();
   const getProjectsController = new GetProjectsController(
     mongoGetProjectsRepository
   );
-  const { body, statusCode } = await getProjectsController.handle();
+  const { body, statusCode } = await getProjectsController.handle({
+    params: req.params,
+  });
   res.status(statusCode).send(body);
 });
 

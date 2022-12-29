@@ -11,7 +11,7 @@ export class MongoDeleteProjectRepository implements IDeleteProjectRepository {
       .findOne({ _id: new ObjectId(id) });
 
     if (!project) {
-      throw new Error("Skill not found.");
+      throw new Error("Project not found.");
     }
 
     const { deletedCount } = await MongoClient.db

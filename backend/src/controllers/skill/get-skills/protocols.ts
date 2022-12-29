@@ -1,5 +1,5 @@
 import { Skill } from "../../../models/skill";
 
 export interface IGetSkillsRepository {
-  getSkills(): Promise<Skill[]>;
+  getSkills(id?: string): Promise<Skill[] | Skill>;
 }
