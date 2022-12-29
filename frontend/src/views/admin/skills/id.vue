@@ -11,6 +11,7 @@
               <div class="form-group">
                 <input
                   id="name"
+                  v-model="form.name"
                   type="text"
                   name="name"
                   class="w-100 mt-1"
@@ -24,6 +25,7 @@
               <div class="form-group">
                 <input
                   id="icon"
+                  v-model="form.icon"
                   type="text"
                   name="icon"
                   class="w-100 mt-1"
@@ -32,7 +34,11 @@
               </div>
             </label>
             <div class="mt-4 w-50 mx-auto">
-              <ButtonComponent text="Salvar" type="submit" />
+              <ButtonComponent
+                text="Salvar"
+                type="submit"
+                @buttonClick="patchSkill(id)"
+              />
             </div>
           </form>
         </div>
@@ -42,7 +48,7 @@
   </div>
 </template>
 
-<script lang="ts" src="./index.ts"></script>
+<script lang="ts" src="./id.ts"></script>
 
 <style scoped>
 section {

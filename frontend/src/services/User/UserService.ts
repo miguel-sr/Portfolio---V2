@@ -1,7 +1,6 @@
 import api from "../api";
 import Swal from "sweetalert2";
 import { ILoginParams } from "./protocols";
-import { ITokenParams } from "../jwt.service";
 
 export default {
   async loginUser(credentials: ILoginParams) {

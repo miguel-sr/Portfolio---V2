@@ -12,20 +12,22 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/admin/skills",
-    name: "skills",
+    name: "AdminSkillsIndexPage",
     component: () =>
       import(
-        /* webpackChunkName: "skills" */ "../views/admin/skills/index.vue"
+        /* webpackChunkName: "AdminSkillsIndexPage" */ "../views/admin/skills/index.vue"
       ),
     meta: {
       isAdmin: true,
     },
   },
   {
-    path: "/admin/skills/id:id",
-    name: "skills/id",
+    path: "/admin/skills/?id=:id",
+    name: "AdminSkillsId",
     component: () =>
-      import(/* webpackChunkName: "skills" */ "../views/admin/skills/id.vue"),
+      import(
+        /* webpackChunkName: "AdminSkillsId" */ "../views/admin/skills/id.vue"
+      ),
     meta: {
       isAdmin: true,
     },

@@ -3,55 +3,16 @@
   <section id="skills" class="d-flex flex-column align-items-center">
     <h2>🚀 Skills</h2>
     <div
-      class="d-flex flex-wrap gap-4 justify-content-center w-50 mx-auto mt-5"
+      class="d-flex flex-wrap gap-4 justify-content-center mx-auto mt-5"
+      style="width: 65%"
     >
-      <div class="skill d-flex align-items-center px-3 py-2">
-        <img
-          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
-        />
-        <p class="ms-3 mb-0">Git/Github</p>
-      </div>
-      <div class="skill d-flex align-items-center px-3 py-2">
-        <img
-          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-        />
-        <p class="ms-3 mb-0">Node.js</p>
-      </div>
-      <div class="skill d-flex align-items-center px-3 py-2">
-        <img
-          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-        />
-        <p class="ms-3 mb-0">Node.js</p>
-      </div>
-      <div class="skill d-flex align-items-center px-3 py-2">
-        <img
-          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-        />
-        <p class="ms-3 mb-0">Node.js</p>
-      </div>
-      <div class="skill d-flex align-items-center px-3 py-2">
-        <img
-          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-        />
-        <p class="ms-3 mb-0">Node.js</p>
-      </div>
-      <div class="skill d-flex align-items-center px-3 py-2">
-        <img
-          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-        />
-        <p class="ms-3 mb-0">Node.js</p>
-      </div>
-      <div class="skill d-flex align-items-center px-3 py-2">
-        <img
-          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-        />
-        <p class="ms-3 mb-0">Node.js</p>
-      </div>
-      <div class="skill d-flex align-items-center px-3 py-2">
-        <img
-          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-        />
-        <p class="ms-3 mb-0">Node.js</p>
+      <div
+        v-for="skill in Skills"
+        :key="skill.id"
+        class="skill d-flex align-items-center"
+      >
+        <img :src="skill.icon" />
+        <p class="ms-3 mb-0">{{ skill.name }}</p>
       </div>
     </div>
   </section>
@@ -72,13 +33,13 @@ h2 {
 .skill {
   background: var(--dark-gray-90);
   border-radius: 25px;
-  width: 170px;
+  padding: 10px 20px;
+  width: 200px;
 }
 
 .skill p {
   color: var(--beige);
   font-weight: 600;
-  text-align: right;
   width: 100%;
 }
 

@@ -11,6 +11,7 @@
               <div class="form-group">
                 <input
                   id="name"
+                  v-model="form.name"
                   type="text"
                   name="name"
                   class="w-100 mt-1"
@@ -24,6 +25,7 @@
               <div class="form-group">
                 <input
                   id="icon"
+                  v-model="form.icon"
                   type="text"
                   name="icon"
                   class="w-100 mt-1"
@@ -32,28 +34,27 @@
               </div>
             </label>
             <div class="mt-4 w-50 mx-auto">
-              <ButtonComponent text="Criar" type="submit" />
+              <ButtonComponent
+                text="Criar"
+                type="submit"
+                @buttonClick="createSkill"
+              />
             </div>
           </form>
         </div>
-        <div class="d-flex flex-wrap gap-4 justify-content-center mx-auto mt-5">
-          <div class="skill d-flex align-items-center px-3 py-2">
-            <div role="button">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
-              />
-              <span class="ms-3 mb-0">Git/Github</span>
-            </div>
-            <i class="bi bi-x ms-auto me-0"></i>
-          </div>
-          <div class="skill d-flex align-items-center px-3 py-2">
-            <div role="button">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-              />
-              <span class="ms-3 mb-0">Node.js</span>
-            </div>
-            <i class="bi bi-x ms-auto me-0"></i>
+        <div
+          class="d-flex flex-wrap gap-4 w-75 justify-content-center mx-auto mt-5"
+        >
+          <div
+            v-for="skill in Skills"
+            :key="skill.id"
+            class="skill d-flex align-items-center px-3 py-2"
+          >
+            <a role="button" @click="patchSkill(skill.id)">
+              <img :src="skill.icon" />
+              <span class="ms-3 mb-0">{{ skill.name }}</span>
+            </a>
+            <i @click="deleteSkill(skill.id)" class="bi bi-x ms-auto me-0"></i>
           </div>
         </div>
       </div>
@@ -76,7 +77,7 @@ h2 {
 }
 
 form {
-  min-width: 400px;
+  width: 400px;
 }
 
 label {
