@@ -3,9 +3,15 @@ import NavbarComponent from "@/components/NavbarComponent/NavbarComponent.vue";
 import ButtonComponent from "@/components/ButtonComponent/ButtonComponent.vue";
 import FooterComponent from "@/components/FooterComponent/FooterComponent.vue";
 import SkillService from "@/services/Skill/SkillService";
+import { useVuelidate } from "@vuelidate/core";
+import { required } from "@vuelidate/validators";
+import Swal from "sweetalert2";
 
 export default defineComponent({
   name: "AdminSkillsIndexPage",
+  setup() {
+    return { v$: useVuelidate() };
+  },
   components: {
     NavbarComponent,
     ButtonComponent,
@@ -21,21 +27,49 @@ export default defineComponent({
       Skills: [],
     };
   },
+  validations() {
+    return {
+      form: {
+        name: { required },
+        icon: { required },
+      },
+    };
+  },
   mounted() {
     this.getSkills();
   },
   methods: {
-    onSubmit() {
-      this.isSubmitted = true;
-    },
     async getSkills() {
       this.Skills = await SkillService.get();
     },
     async createSkill() {
-      await SkillService.post(this.form);
-      this.getSkills();
-      this.form.name = "";
-      this.form.icon = "";
+      try {
+        this.isSubmitted = true;
+        this.v$.$touch();
+
+        console.log(this.v$.$invalid);
+
+        if (this.v$.$invalid) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Você precisa incluir todos os campos obrigatórios!",
+          });
+          return;
+        }
+
+        await SkillService.post(this.form);
+        this.getSkills();
+        this.isSubmitted = false;
+        this.form.name = "";
+        this.form.icon = "";
+      } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Alguma coisa deu errado aqui!",
+        });
+      }
     },
     patchSkill(id: string) {
       this.$router.push({

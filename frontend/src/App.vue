@@ -43,6 +43,7 @@ body {
     url(@/assets/bg-body.jpg);
   background-attachment: fixed;
   background-size: cover;
+  padding-right: 0 !important;
 }
 
 /* width */
@@ -63,5 +64,9 @@ html::-webkit-scrollbar-thumb {
     var(--light-yellow) 50%,
     var(--dark-yellow) 100%
   );
+}
+
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+  overflow: auto !important;
 }
 </style>

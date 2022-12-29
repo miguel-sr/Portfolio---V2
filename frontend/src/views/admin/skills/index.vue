@@ -16,10 +16,16 @@
                   name="name"
                   class="w-100 mt-1"
                   placeholder="Digite aqui"
+                  :class="{ 'is-invalid': isSubmitted && v$.form.name.$error }"
                 />
+                <div
+                  v-if="isSubmitted && v$.form.name.required"
+                  class="invalid-feedback"
+                >
+                  Este campo é obrigatório!
+                </div>
               </div>
             </label>
-
             <label for="icon" class="w-100 mt-3"
               >Ícone:
               <div class="form-group">
@@ -30,7 +36,14 @@
                   name="icon"
                   class="w-100 mt-1"
                   placeholder="Digite aqui"
+                  :class="{ 'is-invalid': isSubmitted && v$.form.icon.$error }"
                 />
+                <div
+                  v-if="isSubmitted && v$.form.icon.required"
+                  class="invalid-feedback"
+                >
+                  Este campo é obrigatório!
+                </div>
               </div>
             </label>
             <div class="mt-4 w-50 mx-auto">
