@@ -59,15 +59,15 @@
           class="d-flex flex-wrap gap-4 w-75 justify-content-center mx-auto mt-5"
         >
           <div
-            v-for="skill in Skills"
-            :key="skill.id"
+            v-for="item in Skills"
+            :key="item.id"
             class="skill d-flex align-items-center px-3 py-2"
           >
-            <a role="button" @click="patchSkill(skill.id)">
-              <img :src="skill.icon" />
-              <span class="ms-3 mb-0">{{ skill.name }}</span>
+            <a role="button" @click="patchSkill(item.id)">
+              <img :src="item.icon" />
+              <span class="ms-3 mb-0">{{ item.name }}</span>
             </a>
-            <i @click="deleteSkill(skill.id)" class="bi bi-x ms-auto me-0"></i>
+            <i @click="deleteSkill(item.id)" class="bi bi-x ms-auto me-0"></i>
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@ section {
 }
 
 h2 {
-  margin-top: 100px;
+  margin-top: 120px;
   font-weight: 800;
   color: var(--light-yellow);
 }

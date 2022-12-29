@@ -47,8 +47,6 @@ export default defineComponent({
         this.isSubmitted = true;
         this.v$.$touch();
 
-        console.log(this.v$.$invalid);
-
         if (this.v$.$invalid) {
           Swal.fire({
             icon: "error",
@@ -58,11 +56,12 @@ export default defineComponent({
           return;
         }
 
-        await SkillService.post(this.form);
-        this.getSkills();
-        this.isSubmitted = false;
-        this.form.name = "";
-        this.form.icon = "";
+        await SkillService.post(this.form).then(() => {
+          this.getSkills();
+          this.isSubmitted = false;
+          this.form.name = "";
+          this.form.icon = "";
+        });
       } catch (error) {
         Swal.fire({
           icon: "error",
