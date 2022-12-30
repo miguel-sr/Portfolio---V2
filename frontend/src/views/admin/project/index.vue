@@ -2,10 +2,10 @@
   <div>
     <NavbarComponent />
     <section class="d-flex flex-column">
-      <div class="me-auto ms-auto text-center">
+      <div class="me-auto ms-auto text-center w-75">
         <h2>📌 Work</h2>
         <div class="container">
-          <form class="text-center mx-auto" @submit.prevent="onSubmit">
+          <form class="text-center w-100 mx-auto" @submit.prevent="onSubmit">
             <label for="name" class="w-100"
               >Nome:
               <div class="form-group">
@@ -16,7 +16,9 @@
                   name="name"
                   class="w-100 mt-1"
                   placeholder="Digite aqui"
-                  :class="{ 'is-invalid': isSubmitted && v$.form.name.$error }"
+                  :class="{
+                    'is-invalid': isSubmitted && v$.form.name.$error,
+                  }"
                 />
                 <div
                   v-if="isSubmitted && v$.form.name.required"
@@ -26,114 +28,144 @@
                 </div>
               </div>
             </label>
-            <label for="description" class="w-100 mt-3"
-              >Descrição:
-              <div class="form-group">
-                <textarea
-                  id="description"
-                  v-model="form.description"
-                  name="description"
-                  class="w-100 mt-1"
-                  placeholder="Digite aqui"
-                  rows="5"
+            <div class="d-flex flex-wrap justify-content-center gap-3 w-100">
+              <label for="description" class="w-100 mt-3"
+                >Descrição:
+                <div class="form-group">
+                  <textarea
+                    id="description"
+                    v-model="form.description"
+                    name="description"
+                    class="w-100 mt-1"
+                    placeholder="Digite aqui"
+                    :class="{
+                      'is-invalid': isSubmitted && v$.form.description.$error,
+                    }"
+                  ></textarea>
+                  <div
+                    v-if="isSubmitted && v$.form.description.required"
+                    class="invalid-feedback"
+                  >
+                    Este campo é obrigatório!
+                  </div>
+                </div>
+              </label>
+              <label for="skills" class="w-100 mt-3"
+                >Skills:
+                <select
+                  name="skills"
+                  id="skills"
+                  class="w-100"
+                  multiple
+                  title="Selecione:"
+                  v-model="form.skills"
                   :class="{
-                    'is-invalid': isSubmitted && v$.form.description.$error,
+                    'is-invalid': isSubmitted && v$.form.skills.$error,
                   }"
-                ></textarea>
+                >
+                  <option class="p-2" disabled>Selecione:</option>
+                  <option
+                    class="p-2"
+                    v-for="item in Skills"
+                    :key="item.id"
+                    :value="item.id"
+                  >
+                    {{ item.name }}
+                  </option>
+                </select>
                 <div
-                  v-if="isSubmitted && v$.form.description.required"
+                  v-if="isSubmitted && v$.form.skills.required"
                   class="invalid-feedback"
                 >
-                  Este campo é obrigatório!
+                  O campo categoria é obrigatório!
                 </div>
-              </div>
-            </label>
-            <label for="deploy" class="w-100 mt-3"
-              >Deploy:
-              <div class="form-group">
-                <input
-                  id="deploy_url"
-                  v-model="form.deploy_url"
-                  type="text"
-                  name="deploy_url"
-                  class="w-100 mt-1"
-                  placeholder="Digite aqui"
-                />
-              </div>
-            </label>
-            <label for="github_url" class="w-100 mt-3"
-              >Repositório:
-              <div class="form-group">
-                <input
-                  id="github_url"
-                  v-model="form.github_url"
-                  type="text"
-                  name="github_url"
-                  class="w-100 mt-1"
-                  placeholder="Digite aqui"
-                  :class="{
-                    'is-invalid': isSubmitted && v$.form.github_url.$error,
-                  }"
-                />
-                <div
-                  v-if="isSubmitted && v$.form.github_url.required"
-                  class="invalid-feedback"
-                >
-                  Este campo é obrigatório!
+              </label>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-center gap-3 w-100">
+              <label for="deploy" class="w-100 mt-3"
+                >Deploy:
+                <div class="form-group">
+                  <input
+                    id="deploy_url"
+                    v-model="form.deploy_url"
+                    type="text"
+                    name="deploy_url"
+                    class="w-100 mt-1"
+                    placeholder="Digite aqui"
+                  />
                 </div>
-              </div>
-            </label>
-            <label for="skills" class="w-100 mt-3"
-              >Categoria:
-              <select
-                name="skills"
-                id="skills"
-                class="w-100 mt-1"
-                multiple
-                v-model="form.skills"
-                :class="{
-                  'is-invalid': isSubmitted && v$.form.skills.$error,
-                }"
-              >
-                <option disabled>Selecione:</option>
-                <option
-                  class="p-2"
-                  v-for="item in Skills"
-                  :key="item.id"
-                  :value="item.id"
-                >
-                  {{ item.name }}
-                </option>
-              </select>
-              <div
-                v-if="isSubmitted && v$.form.skills.required"
-                class="invalid-feedback"
-              >
-                O campo categoria é obrigatório!
-              </div>
-            </label>
-            <label for="images" class="w-100 mt-3"
-              >Imagens:
-              <div class="form-group">
-                <input
-                  id="images"
-                  v-model="form.images"
-                  type="text"
-                  name="images"
-                  class="w-100 mt-1"
-                  placeholder="Digite aqui"
-                  :class="{
-                    'is-invalid': isSubmitted && v$.form.images.$error,
-                  }"
-                />
-                <div
-                  v-if="isSubmitted && v$.form.images.required"
-                  class="invalid-feedback"
-                >
-                  Este campo é obrigatório!
+              </label>
+              <label for="github_url" class="w-100 mt-3"
+                >Repositório:
+                <div class="form-group">
+                  <input
+                    id="github_url"
+                    v-model="form.github_url"
+                    type="text"
+                    name="github_url"
+                    class="w-100 mt-1"
+                    placeholder="Digite aqui"
+                    :class="{
+                      'is-invalid': isSubmitted && v$.form.github_url.$error,
+                    }"
+                  />
+                  <div
+                    v-if="isSubmitted && v$.form.github_url.required"
+                    class="invalid-feedback"
+                  >
+                    Este campo é obrigatório!
+                  </div>
                 </div>
-              </div>
-            </label>
+              </label>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center gap-3 w-100">
+              <label for="coverImage" class="w-100 mt-3"
+                >Banner:
+                <div class="form-group">
+                  <input
+                    id="coverImage"
+                    v-model="form.coverImage"
+                    type="text"
+                    name="coverImage"
+                    class="w-100 mt-1"
+                    placeholder="Digite aqui"
+                    :class="{
+                      'is-invalid': isSubmitted && v$.form.coverImage.$error,
+                    }"
+                  />
+                  <div
+                    v-if="isSubmitted && v$.form.coverImage.required"
+                    class="invalid-feedback"
+                  >
+                    Este campo é obrigatório!
+                  </div>
+                </div>
+              </label>
+              <label for="fullPageImage" class="w-100 mt-3"
+                >Pagína Completa:
+                <div class="form-group">
+                  <input
+                    id="fullPageImage"
+                    v-model="form.fullPageImage"
+                    type="text"
+                    name="fullPageImage"
+                    class="w-100 mt-1"
+                    placeholder="Digite aqui"
+                    :class="{
+                      'is-invalid': isSubmitted && v$.form.fullPageImage.$error,
+                    }"
+                  />
+                  <div
+                    v-if="isSubmitted && v$.form.fullPageImage.required"
+                    class="invalid-feedback"
+                  >
+                    Este campo é obrigatório!
+                  </div>
+                </div>
+              </label>
+            </div>
+
             <div class="mt-4 w-50 mx-auto">
               <ButtonComponent
                 text="Criar"
@@ -144,10 +176,10 @@
           </form>
         </div>
         <div
-          class="d-flex flex-wrap gap-4 w-75 justify-content-center mx-auto mt-5"
+          class="d-flex flex-wrap gap-4 w-75 justify-content-center mx-auto my-5"
         >
           <div
-            v-for="item in Project"
+            v-for="item in Projects"
             :key="item.id"
             class="skill d-flex align-items-center px-3 py-2"
           >
@@ -176,13 +208,10 @@ h2 {
   color: var(--light-yellow);
 }
 
-form {
-  width: 400px;
-}
-
 label {
   color: var(--light-yellow);
   text-align: left;
+  max-width: 400px;
 }
 
 input,
@@ -193,6 +222,12 @@ select {
   border-radius: 10px;
   border: none;
   padding: 10px;
+}
+
+textarea,
+select {
+  resize: none;
+  height: 150px;
 }
 
 /* width */

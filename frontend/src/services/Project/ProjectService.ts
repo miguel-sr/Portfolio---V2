@@ -44,6 +44,7 @@ export default {
         text: "Dados atualizados com sucesso!",
       });
     } catch (error) {
+      console.log(error);
       Swal.fire({
         icon: "error",
         title: "Oops...",
