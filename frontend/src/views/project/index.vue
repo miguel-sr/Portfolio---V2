@@ -8,18 +8,8 @@
             <img class="w-100" :src="fullPageImage" />
           </div>
           <div class="w-50 d-flex flex-column justify-content-center">
-            <h2>🚀 {{ name }}</h2>
-            <div class="d-flex gap-3 justify-content-center my-4">
-              <div
-                v-for="item in skills"
-                :key="item.id"
-                class="skill d-flex align-items-center"
-              >
-                <img :src="item.icon" />
-                <p class="ms-3 mb-0">{{ item.name }}</p>
-              </div>
-            </div>
-            <p class="text-light" style="text-align: justify">
+            <h2>{{ name }}</h2>
+            <p class="text-light my-3" style="text-align: justify">
               {{ description }}
             </p>
             <div class="d-flex gap-5 justify-content-center">
@@ -39,6 +29,18 @@
               >
                 <i class="bi bi-window-stack"></i>
               </a>
+            </div>
+            <div class="my-5">
+              <div class="d-flex gap-3 mt-4 justify-content-center">
+                <div
+                  v-for="item in skills"
+                  :key="item.id"
+                  class="skill d-flex align-items-center"
+                >
+                  <img :src="item.icon" />
+                  <p class="ms-3 mb-0">{{ item.name }}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
