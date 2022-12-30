@@ -3,35 +3,14 @@
   <section id="work" class="d-flex flex-column align-items-center">
     <h2>📌 Work</h2>
     <div class="d-flex flex-wrap justify-content-center w-100 mx-auto mt-5">
-      <router-link to="/" class="item">
-        <img class="w-100" src="../../assets/spotify.png" />
-      </router-link>
-      <router-link to="/" class="item">
-        <img class="w-100" src="../../assets/spotify.png" />
-      </router-link>
-      <router-link to="/" class="item">
-        <img class="w-100" src="../../assets/spotify.png" />
-      </router-link>
-      <router-link to="/" class="item">
-        <img class="w-100" src="../../assets/spotify.png" />
-      </router-link>
-      <router-link to="/" class="item">
-        <img class="w-100" src="../../assets/spotify.png" />
-      </router-link>
-      <router-link to="/" class="item">
-        <img class="w-100" src="../../assets/spotify.png" />
-      </router-link>
-      <router-link to="/" class="item">
-        <img class="w-100" src="../../assets/spotify.png" />
-      </router-link>
-      <router-link to="/" class="item">
-        <img class="w-100" src="../../assets/spotify.png" />
-      </router-link>
-      <router-link to="/" class="item">
-        <img class="w-100" src="../../assets/spotify.png" />
-      </router-link>
-      <router-link to="/" class="item">
-        <img class="w-100" src="../../assets/spotify.png" />
+      <router-link
+        @click="viewProjectDetails(item.id)"
+        v-for="item in Projects"
+        :key="item.id"
+        to=""
+        class="item"
+      >
+        <img class="w-100" :src="item.coverImage" />
       </router-link>
     </div>
   </section>
