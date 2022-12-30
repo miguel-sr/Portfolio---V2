@@ -28,7 +28,8 @@ export class UpdateProjectController implements IController {
         "deploy_url",
         "github_url",
         "skills",
-        "images",
+        "coverImage",
+        "fullPageImage",
       ];
       const someFieldIsNotAllowedToUpdate = Object.keys(body).some(
         (key) =>

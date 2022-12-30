@@ -6,7 +6,8 @@ export interface IUpdateProjectParams {
   deploy_url?: string;
   github_url?: string;
   skills?: string[];
-  images?: string[];
+  coverImage?: string;
+  fullPageImage?: string;
 }
 
 export interface IUpdateProjectRepository {
