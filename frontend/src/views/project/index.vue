@@ -5,41 +5,40 @@
       <div class="me-auto ms-auto text-center" style="margin-top: 88px">
         <div class="container d-flex gap-5 my-5">
           <div class="w-50">
-            <img class="w-100" src="@/assets/FullSpotifyPage.png" alt="" />
+            <img class="w-100" :src="fullPageImage" />
           </div>
           <div class="w-50 d-flex flex-column justify-content-center">
-            <h2>🚀 Spotify Page</h2>
+            <h2>🚀 {{ name }}</h2>
             <div class="d-flex gap-3 justify-content-center my-4">
-              <div class="skill d-flex align-items-center">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-                />
-                <p class="ms-3 mb-0">Node.js</p>
-              </div>
-              <div class="skill d-flex align-items-center">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg"
-                />
-                <p class="ms-3 mb-0">Bootstrap</p>
+              <div
+                v-for="item in skills"
+                :key="item.id"
+                class="skill d-flex align-items-center"
+              >
+                <img :src="item.icon" />
+                <p class="ms-3 mb-0">{{ item.name }}</p>
               </div>
             </div>
             <p class="text-light" style="text-align: justify">
-              Vivamus sagittis mauris nibh, varius tempor eros tempor ut. Morbi
-              condimentum iaculis urna et aliquam. Pellentesque ut ex quis metus
-              tempus ultrices quis ac ipsum. Pellentesque eu diam arcu.
-              Pellentesque habitant morbi tristique senectus et netus et
-              malesuada fames ac turpis egestas. Fusce imperdiet posuere justo
-              at tempor. Nam tincidunt ullamcorper dignissim. Integer vel velit
-              nisl. Mauris dolor ex, faucibus nec est quis, commodo accumsan
-              dolor.
+              {{ description }}
             </p>
             <div class="d-flex gap-5 justify-content-center">
-              <button id="github-link" style="background: transparent">
+              <a
+                id="github-link"
+                :href="github_url"
+                target="__blank"
+                style="cursor: pointer; text-decoration: none"
+              >
                 <i class="bi bi-file-earmark-code"></i>
-              </button>
-              <button id="deploy-link" style="background: transparent">
+              </a>
+              <a
+                id="deploy-link"
+                :href="deploy_url"
+                target="__blank"
+                style="cursor: pointer; text-decoration: none"
+              >
                 <i class="bi bi-window-stack"></i>
-              </button>
+              </a>
             </div>
           </div>
         </div>
