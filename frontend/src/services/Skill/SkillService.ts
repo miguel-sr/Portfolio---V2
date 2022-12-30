@@ -1,6 +1,6 @@
 import Api from "../api";
 import Swal from "sweetalert2";
-import { ISkillParams } from "./protocols";
+import { ICreateSkillParams, IUpdateSkillParams } from "./protocols";
 
 export default {
   async get(id?: string | null) {
@@ -11,7 +11,7 @@ export default {
     const response = await Api().get("/skills");
     return response.data;
   },
-  async post(skill: ISkillParams) {
+  async post(skill: ICreateSkillParams) {
     try {
       await Api().post("/skills", skill, {
         headers: {
@@ -31,7 +31,7 @@ export default {
       });
     }
   },
-  async patch(id: string, skill: ISkillParams) {
+  async patch(id: string, skill: IUpdateSkillParams) {
     console.log(skill);
     try {
       await Api().patch("/skills/" + id, skill, {

@@ -1,9 +1,9 @@
 import Api from "../api";
 import Swal from "sweetalert2";
-import { IProjectParams } from "./protocols";
+import { ICreateProjectParams, IUpdateProjectParams } from "./protocols";
 
 export default {
-  async get(id?: string) {
+  async get(id?: string | null) {
     if (id) {
       const response = await Api().get("/projects/" + id);
       return response.data;
@@ -11,7 +11,7 @@ export default {
     const response = await Api().get("/projects");
     return response.data;
   },
-  async post(project: IProjectParams) {
+  async post(project: ICreateProjectParams) {
     try {
       await Api().post("/projects", project, {
         headers: {
@@ -31,7 +31,7 @@ export default {
       });
     }
   },
-  async patch(id: string, project: IProjectParams) {
+  async patch(id: string, project: IUpdateProjectParams) {
     try {
       await Api().patch("/projects/" + id, project, {
         headers: {
