@@ -7,5 +7,6 @@ export interface Project {
   deploy_url: string;
   github_url: string;
   skills: Skill[];
-  images: string[];
+  coverImage: string;
+  fullPageImage: string;
 }

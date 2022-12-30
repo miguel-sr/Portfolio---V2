@@ -12,7 +12,14 @@ export class CreateProjectController implements IController {
     httpRequest: IHttpRequest<ICreateProjectParams>
   ): Promise<IHttpResponse<Project | string>> {
     try {
-      const requiredFields = ["name", "description", "github_url", "skills", "images"];
+      const requiredFields = [
+        "name",
+        "description",
+        "github_url",
+        "skills",
+        "coverImage",
+        "fullPageImage",
+      ];
 
       for (const field of requiredFields) {
         if (!httpRequest?.body?.[field as keyof ICreateProjectParams]?.length) {

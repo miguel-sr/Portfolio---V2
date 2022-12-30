@@ -7,7 +7,8 @@ export interface ICreateProjectParams {
   deploy_url?: string;
   github_url: string;
   skills: Skill[];
-  images: string[];
+  coverImage: string;
+  fullPageImage: string;
 }
 
 export interface ICreateProjectRepository {
