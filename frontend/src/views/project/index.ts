@@ -15,6 +15,7 @@ export default defineComponent({
       name: "",
       description: "",
       deploy_url: "",
+      isDeployed: true,
       github_url: "",
       skills: [""],
       coverImage: "",
@@ -32,17 +33,19 @@ export default defineComponent({
       ).then((project) => {
         this.name = project.name;
         this.description = project.description;
-        if (project.deploy_url) {
-          this.deploy_url = project.deploy_url;
+        this.deploy_url = project.deploy_url;
+        if (project.deploy_url === "") {
+          this.isDeployed = false;
         }
         this.github_url = project.github_url;
+        this.coverImage = project.coverImage;
+        this.fullPageImage = project.fullPageImage;
+
         project.skills.forEach(async (id: string) => {
           await SkillService.get(id).then((item) => {
             this.skills.push(item);
           });
         });
-        this.coverImage = project.coverImage;
-        this.fullPageImage = project.fullPageImage;
       });
     },
   },

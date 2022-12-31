@@ -23,6 +23,7 @@
               </a>
               <a
                 id="deploy-link"
+                v-show="isDeployed"
                 :href="deploy_url"
                 target="__blank"
                 style="cursor: pointer; text-decoration: none"
@@ -155,19 +156,14 @@ i::before {
     flex-direction: column;
   }
 
-  .container > div:first-of-type {
-    height: 40vh !important;
-  }
-
   .container > div {
     flex-direction: column;
     width: 100% !important;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1199.98px) {
+@media (max-width: 1199.98px) {
   .container > div:first-of-type {
-    overflow-y: scroll;
     height: 40vh !important;
   }
 }
