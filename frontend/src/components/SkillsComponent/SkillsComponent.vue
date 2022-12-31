@@ -2,10 +2,7 @@
   <!-- Hero -->
   <section id="skills" class="d-flex flex-column align-items-center">
     <h2>🚀 Skills</h2>
-    <div
-      class="d-flex flex-wrap gap-4 justify-content-center mx-auto mt-5"
-      style="width: 65%"
-    >
+    <div class="d-flex flex-wrap gap-4 justify-content-center mx-auto mt-5">
       <div
         v-for="skill in Skills"
         :key="skill.id"
@@ -30,6 +27,10 @@ h2 {
   color: var(--light-yellow);
 }
 
+section > div {
+  width: 65%;
+}
+
 .skill {
   background: var(--dark-gray-90);
   border-radius: 25px;
@@ -45,5 +46,19 @@ h2 {
 
 .skill img {
   width: 35px;
+}
+
+@media (max-width: 575.98px) {
+  section > div {
+    width: 100%;
+  }
+
+  .skill {
+    width: 175px;
+  }
+
+  .skill img {
+    width: 30px;
+  }
 }
 </style>

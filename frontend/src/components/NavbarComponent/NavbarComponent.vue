@@ -1,9 +1,10 @@
 <template>
   <nav class="navbar navbar-expand-lg w-100 position-fixed">
-    <div class="container-fluid px-4 py-2">
+    <div class="container-fluid py-2">
       <router-link id="navbar-brand" class="d-flex align-items-center" to="/">
         Miguel S. Ramos
       </router-link>
+      <TogglerComponent />
       <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <ul class="navbar-nav align-items-center ms-auto mb-2 mb-lg-0">
           <li class="nav-item hover-effect">

@@ -2,7 +2,7 @@
   <div>
     <NavbarComponent />
     <section class="d-flex flex-column justify-content-center">
-      <div class="me-auto ms-auto text-center" style="margin-top: 88px">
+      <div class="me-auto ms-auto text-center">
         <div class="container d-flex gap-5 my-5">
           <div class="w-50">
             <img class="w-100" :src="fullPageImage" />
@@ -12,7 +12,7 @@
             <p class="text-light my-3" style="text-align: justify">
               {{ description }}
             </p>
-            <div class="d-flex gap-5 justify-content-center">
+            <div class="d-flex flex-wrap gap-3 justify-content-center">
               <a
                 id="github-link"
                 :href="github_url"
@@ -30,8 +30,8 @@
                 <i class="bi bi-window-stack"></i>
               </a>
             </div>
-            <div class="my-5">
-              <div class="d-flex gap-3 mt-4 justify-content-center">
+            <div class="skills-1 my-5">
+              <div class="d-flex flex-wrap gap-3 mt-4 justify-content-center">
                 <div
                   v-for="item in skills"
                   :key="item.id"
@@ -41,6 +41,18 @@
                   <p class="ms-3 mb-0">{{ item.name }}</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-2 mx-2 mb-5">
+          <div class="d-flex flex-wrap gap-3 mt-4 justify-content-center">
+            <div
+              v-for="item in skills"
+              :key="item.id"
+              class="skill d-flex align-items-center"
+            >
+              <img :src="item.icon" />
+              <p class="ms-3 mb-0">{{ item.name }}</p>
             </div>
           </div>
         </div>
@@ -54,7 +66,7 @@
 
 <style scoped>
 section {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 h2 {
@@ -64,7 +76,7 @@ h2 {
 
 .container > div:first-of-type {
   overflow-y: scroll;
-  height: 80vh;
+  height: 60vh;
 }
 
 div::-webkit-scrollbar {
@@ -90,7 +102,7 @@ div::-webkit-scrollbar-thumb {
   background: var(--dark-gray-90);
   border-radius: 25px;
   padding: 10px 20px;
-  width: 200px;
+  width: 180px;
 }
 
 .skill p {
@@ -101,6 +113,10 @@ div::-webkit-scrollbar-thumb {
 
 .skill img {
   width: 35px;
+}
+
+.skills-2 {
+  display: none;
 }
 
 i {
@@ -128,5 +144,41 @@ i::before {
   font-size: 1.5em;
   font-weight: 500;
   font-style: normal;
+}
+
+@media (max-width: 768.98px) {
+  section > div {
+    margin-top: 100px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .container > div:first-of-type {
+    height: 40vh !important;
+  }
+
+  .container > div {
+    flex-direction: column;
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1199.98px) {
+  .container > div:first-of-type {
+    overflow-y: scroll;
+    height: 40vh !important;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .skills-1 {
+    display: none;
+  }
+
+  .skills-2 {
+    display: block;
+  }
 }
 </style>

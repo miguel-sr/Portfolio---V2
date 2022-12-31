@@ -18,6 +18,7 @@ export default defineComponent({
 :root {
   --dark-gray: rgb(33, 37, 43);
   --dark-gray-90: rgba(33, 37, 43, 0.9);
+  --dark-gray-70: rgba(33, 37, 43, 0.7);
   --dark-gray-50: rgba(33, 37, 43, 0.5);
   --light-gray: rgb(40, 44, 52);
   --light-yellow: rgb(248, 177, 51);

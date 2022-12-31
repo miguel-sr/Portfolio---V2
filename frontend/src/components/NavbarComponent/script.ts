@@ -1,9 +1,13 @@
 import jwtService from "@/services/jwt.service";
 import UserService from "@/services/User/UserService";
+import TogglerComponent from "../TogglerComponent/TogglerComponent.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "NavbarComponent",
+  components: {
+    TogglerComponent,
+  },
   data() {
     return {
       username: "",
