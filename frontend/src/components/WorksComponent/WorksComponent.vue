@@ -56,5 +56,10 @@ h2 {
   .item {
     width: 180px;
   }
+
+  .item:hover::after {
+    line-height: 180px;
+    font-size: 25px;
+  }
 }
 </style>
