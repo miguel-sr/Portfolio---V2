@@ -11,7 +11,7 @@ import { MongoUser } from "../../mongo-protocols";
 // ==> Repository Pattern
 export class MongoLoginUserRepository implements ILoginUserRepository {
   async loginUser(params: ILoginUserParams): Promise<User> {
-    const user = await MongoClient.db
+    let user = await MongoClient.db
       .collection<MongoUser>("users")
       .findOne({ email: params.email });
 
@@ -36,6 +36,10 @@ export class MongoLoginUserRepository implements ILoginUserRepository {
         },
       }
     );
+
+    user = await MongoClient.db
+      .collection<MongoUser>("users")
+      .findOne({ email: params.email });
 
     return MongoClient.map(user);
   }
