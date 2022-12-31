@@ -17,8 +17,10 @@ async function auth(req: Request, res: Response, next: NextFunction) {
 
     const decoded = jwtService.verify(token);
 
-    if (decoded.credentials !== "admin") {
-      return res.status(401).json("Authorization denied.");
+    if (req.path != "/logout") {
+      if (decoded.credentials !== "admin") {
+        return res.status(401).json("Authorization denied.");
+      }
     }
 
     next();

@@ -31,7 +31,7 @@ routes.post("/logout", auth, async (req, res) => {
   redisClient.set(token_key, token);
   redisClient.expireAt(token_key, decoded.exp);
 
-  return res.status(200).send("Token invalidated");
+  return res.status(200).send("Token invalidated.");
 });
 
 export default routes;
