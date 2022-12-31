@@ -51,4 +51,10 @@ h2 {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
+
+@media (max-width: 575.98px) {
+  .item {
+    width: 180px;
+  }
+}
 </style>

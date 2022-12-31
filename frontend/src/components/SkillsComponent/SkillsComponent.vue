@@ -54,7 +54,7 @@ section > div {
   }
 
   .skill {
-    width: 175px;
+    width: 165px;
   }
 
   .skill img {
