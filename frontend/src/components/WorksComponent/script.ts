@@ -17,8 +17,7 @@ export default defineComponent({
     },
     viewProjectDetails(id: string) {
       this.$router.push({
-        name: "ProjectIndexPage",
-        params: { id },
+        path: "/work/" + id,
       });
     },
   },

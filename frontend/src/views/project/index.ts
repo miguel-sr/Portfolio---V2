@@ -28,8 +28,9 @@ export default defineComponent({
   },
   methods: {
     async loadProject() {
+      console.log();
       await ProjectService.get(
-        new URLSearchParams(window.location.search).get("id")
+        window.location.pathname.replaceAll("/work/", "")
       ).then((project) => {
         this.name = project.name;
         this.description = project.description;
