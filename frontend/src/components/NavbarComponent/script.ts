@@ -14,10 +14,21 @@ export default defineComponent({
     };
   },
   methods: {
-    isAdmin() {
+    isUser() {
       if (localStorage.getItem("userToken")) {
         const user = jwtService.decode();
         this.username = user.name;
+
+        if (user) {
+          return true;
+        }
+
+        return false;
+      }
+    },
+    isAdmin() {
+      if (localStorage.getItem("userToken")) {
+        const user = jwtService.decode();
 
         if (user.credentials === "admin") {
           return true;

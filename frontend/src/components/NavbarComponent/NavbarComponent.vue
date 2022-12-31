@@ -19,7 +19,7 @@
           <li class="nav-item hover-effect">
             <router-link class="nav-link" to="/#work">Work</router-link>
           </li>
-          <li class="nav-item user-profile" v-if="isAdmin()">
+          <li class="nav-item user-profile" v-if="isUser()">
             <router-link
               class="nav-link"
               to="/"
@@ -33,7 +33,9 @@
                 {{ username }}
               </router-link>
               <div class="dropdown-divider bg-light"></div>
-              <router-link class="dropdown-item" to="/admin">Admin</router-link>
+              <router-link class="dropdown-item" v-if="isAdmin()" to="/admin">
+                Admin
+              </router-link>
               <router-link class="dropdown-item" to="/" @click="logout">
                 Logout
               </router-link>
