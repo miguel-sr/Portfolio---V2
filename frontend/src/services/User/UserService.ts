@@ -39,7 +39,6 @@ export default {
         text: "Logout realizado com sucesso!",
       });
     } catch (error) {
-      console.log(error);
       Swal.fire({
         icon: "error",
         title: "Oops...",
