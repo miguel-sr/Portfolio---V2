@@ -1,7 +1,6 @@
+import auth from "@/middlewares/auth";
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Swal from "sweetalert2";
 import adminRoutes from "./admin.routes";
-import jwtService from "@/services/jwt.service";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -41,30 +40,6 @@ const router = createRouter({
   },
 });
 
-router.beforeEach((to, from, next) => {
-  if (to.matched.some((record) => record.meta.isAdmin)) {
-    if (localStorage.getItem("userToken") == null) {
-      next({
-        path: "/login",
-      });
-    } else {
-      const user = jwtService.decode();
-      if (user.credentials === "admin") {
-        next();
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Permissões insuficientes!",
-        });
-        next({
-          path: "/",
-        });
-      }
-    }
-  } else {
-    next();
-  }
-});
+router.beforeEach(auth);
 
 export default router;
