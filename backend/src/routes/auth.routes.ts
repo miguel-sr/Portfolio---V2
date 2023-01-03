@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { LoginUserController } from "../controllers/user/login-user/login-user";
 import auth from "../middlewares/auth";
-import { MongoLoginUserRepository } from "../repositories/auth/login-user/mongo-login-user";
+import { MongoLoginUserRepository } from "../repositories/user/login-user/mongo-login-user";
 import getCache from "../services/cache.service";
 import jwtService from "../services/jwt.service";
 const routes = Router();
