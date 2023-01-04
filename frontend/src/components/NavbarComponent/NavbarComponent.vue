@@ -52,7 +52,7 @@
 <style>
 nav {
   font-size: 1.3rem;
-  z-index: 3;
+  z-index: 2;
   background-color: var(--dark-gray-50);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);

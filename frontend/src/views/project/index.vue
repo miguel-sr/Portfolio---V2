@@ -1,21 +1,22 @@
 <template>
   <div>
+    <LoaderComponent :loader="loader" />
     <NavbarComponent />
     <section class="d-flex flex-column justify-content-center">
       <div class="me-auto ms-auto text-center">
         <div class="container d-flex gap-5 my-5">
           <div class="w-50">
-            <img class="w-100" :src="fullPageImage" />
+            <img class="w-100" :src="project.fullPageImage" />
           </div>
           <div class="w-50 d-flex flex-column justify-content-center">
-            <h2>{{ name }}</h2>
+            <h2>{{ project.name }}</h2>
             <p class="text-light my-3" style="text-align: justify">
-              {{ description }}
+              {{ project.description }}
             </p>
             <div class="d-flex flex-wrap gap-3 justify-content-center">
               <a
                 id="github-link"
-                :href="github_url"
+                :href="project.github_url"
                 target="__blank"
                 style="cursor: pointer; text-decoration: none"
               >
@@ -23,8 +24,8 @@
               </a>
               <a
                 id="deploy-link"
-                v-show="isDeployed"
-                :href="deploy_url"
+                v-show="project.isDeployed"
+                :href="project.deploy_url"
                 target="__blank"
                 style="cursor: pointer; text-decoration: none"
               >
@@ -34,7 +35,7 @@
             <div class="skills-1 my-5">
               <div class="d-flex flex-wrap gap-3 mt-4 justify-content-center">
                 <div
-                  v-for="item in skills"
+                  v-for="item in project.skills"
                   :key="item.id"
                   class="skill d-flex align-items-center"
                 >
