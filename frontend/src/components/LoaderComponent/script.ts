@@ -2,10 +2,14 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "LoaderComponent",
-  props: {
-    loader: {
-      type: Boolean,
-      default: true,
-    },
+  data() {
+    return {
+      loader: true,
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.loader = false;
+    }, 1500);
   },
 });

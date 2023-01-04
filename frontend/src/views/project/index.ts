@@ -14,7 +14,6 @@ export default defineComponent({
   },
   data() {
     return {
-      loader: true,
       project: {
         name: "",
         description: "",
@@ -30,11 +29,6 @@ export default defineComponent({
   created() {
     this.project.skills.length = 0;
     this.loadProject();
-  },
-  mounted() {
-    setTimeout(() => {
-      this.loader = false;
-    }, 1000);
   },
   methods: {
     async loadProject() {
