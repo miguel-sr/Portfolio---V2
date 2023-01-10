@@ -10,6 +10,6 @@ export default defineComponent({
   mounted() {
     setTimeout(() => {
       this.loader = false;
-    }, 1500);
+    }, 2000);
   },
 });
